@@ -15,12 +15,11 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
-######################################https://www.robotstory.co.kr/king/?vid=884##########################################
+################################################################################
 # Declare ROS messages, services and actions
 ################################################################################
 set(msg_files
-  "msg/TwoaxisIk.msg"
-  "msg/ServoReadData.msg"
+  "msg/AxisIk.msg"
   "msg/CoordRatio.msg"
 )
 
@@ -28,9 +27,13 @@ set(action_files
   "action/TwoaxisServo.action"
 )
 
+set(srv_files
+  "srv/Servoinfos.srv"
+)
 rosidl_generate_interfaces(${PROJECT_NAME}
   ${msg_files}
   ${action_files}
+  ${srv_files}
 )
 
 if(BUILD_TESTING)

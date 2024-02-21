@@ -1,0 +1,4 @@
+uint8 input
+---
+uint8[] servo_temps
+int16[] servo_angles
